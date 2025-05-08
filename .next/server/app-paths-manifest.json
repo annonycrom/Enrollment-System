@@ -1,0 +1,8 @@
+{
+  "/faculty/dashboard/page": "app/faculty/dashboard/page.js",
+  "/faculty/grades/page": "app/faculty/grades/page.js",
+  "/faculty/schedule/page": "app/faculty/schedule/page.js",
+  "/faculty/task/page": "app/faculty/task/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js"
+}
