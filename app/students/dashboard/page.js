@@ -125,13 +125,13 @@ export default function Dashboard() {
         )}
       </div>
         </div>
-      )}
+      )} 
       <div className="flex flex-row items-start relative">
-<<<<<<< HEAD
+
       <div className="flex flex-col items-center bg-blue-600 p-5 shadow-md w-80 h-70">
-=======
+
         <div className="flex flex-col items-center bg-blue-600 p-5 shadow-md w-80 h-70">
->>>>>>> 69669e4454d81fca5ffc36c343b6246793588288
+
           <Image
             src="/sample.jpg"
             alt="Logo"

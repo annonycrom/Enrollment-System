@@ -144,7 +144,7 @@ const Announcements = () => {
                     >
                       Sign Out 
                     </button>
-                  </li>
+                  </li> 
                 </ul>   
               </div>
             )}

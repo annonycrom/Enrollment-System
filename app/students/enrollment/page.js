@@ -170,7 +170,7 @@ export default function Dashboard() {
               <p className="mb-2">Course description</p>
               <p className="font-bold mb-1">Upcoming Deadlines:</p>
               {selectedCourse.deadlines.map((d, i) => ( 
-                <p key={i}>{d}</p>
+                <p key={i}>{d}</p> 
               ))} 
               <div className="mt-4 flex gap-2">
                 <button
