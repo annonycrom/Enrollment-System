@@ -160,7 +160,7 @@ export default function Dashboard() {
                     </button>
                   </td>
                 </tr>
-              ))}
+              ))} 
             </tbody>
           </table>
 

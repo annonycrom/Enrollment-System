@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const feeData = [
   { status: "Unpaid", feeType: "Tuition", amount: "₱ 2,500", dueDate: "2025-01-01", paid: false },
   { status: "Paid", feeType: "Library", amount: "₱ 2,500", dueDate: "2025-01-01", paid: true },
-  { status: "Unpaid", feeType: "Tuition", amount: "₱ 2,500", dueDate: "2025-01-01", paid: false },
+  { status: "Unpaid", feeType: "Tuition", amount: "₱ 2,500", dueDate: "2025-01-01", paid: false }, 
 ];
 
 function App() {

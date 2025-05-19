@@ -8,7 +8,7 @@ export default function Dashboard() {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState("");
-  const [modalText, setModalText] = useState("");
+  const [modalText, setModalText] = useState(""); 
   const [editingId, setEditingId] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
   const [confirmAction, setConfirmAction] = useState(null);

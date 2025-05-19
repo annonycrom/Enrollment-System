@@ -203,7 +203,7 @@ export default function Dashboard() {
                                         <th className="border border-gray-300 px-4 py-2">Task</th>
                                         <th className="border border-gray-300 px-4 py-2">Due Date</th>
                                         <th className="border border-gray-300 px-4 py-2">Submit</th>
-                                    </tr>
+                                    </tr>  
                                 </thead>
                                 <tbody>
                                     {rows.map((row, index) => (
