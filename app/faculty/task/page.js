@@ -6,17 +6,41 @@ import { useRouter } from "next/navigation";
 
 export default function Section() {
   const [showMenu, setShowMenu] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  // Start with no tasks
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState({
+    status: "Pending",
+    subject: "",
+    task: "",
+    dueDate: "",
+  });
   const router = useRouter();
 
   const handleSignOut = () => {
-    console.log("Signing out...");
     setShowMenu(false);
     router.push("/");
   };
 
   const handleSubmit = (subject, task) => {
-    console.log(`Submitting ${task} for ${subject}`);
     // Add your submission logic here
+  };
+
+  const handleAddTask = () => {
+    setTasks([
+      ...tasks,
+      { ...newTask }
+    ]);
+    setShowModal(false);
+    setNewTask({ status: "Pending", subject: "", task: "", dueDate: "" });
+  };
+
+  // Sort tasks by due date (earliest first)
+  const sortedTasks = [...tasks].sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+
+  // Add this function inside your Section component
+  const handleRemoveTask = (index) => {
+    setTasks(tasks.filter((_, i) => i !== index));
   };
 
   return (
@@ -131,6 +155,17 @@ export default function Section() {
         </nav>
         <div className="flex flex-col flex-1 gap-6 p-2">
           <section className="p-1 max-w-screen bg-grey shadow border-dotted border-2 border-yellow-400 rounded-lg overflow-scroll overflow-x-auto">
+            <div className="flex items-center mb-2 justify-between">
+              <span className="font-extrabold text-lg text-black">
+                Task List
+              </span>
+              <button
+                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+                onClick={() => setShowModal(true)}
+              >
+                + Add Task
+              </button>
+            </div>
             <table className="table-auto w-full border-collapse border border-gray-300 text-center">
               <thead className="bg-gray-200">
                 <tr>
@@ -139,86 +174,93 @@ export default function Section() {
                   <th className="border border-gray-300 px-4 py-2 text-black">Task</th>
                   <th className="border border-gray-300 px-4 py-2 text-black">Due Date</th>
                   <th className="border border-gray-300 px-4 py-2 text-black">Submit</th>
+                  <th className="border border-gray-300 px-4 py-2 text-black">Remove</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="border border-gray-300 px-4 py-2 text-black">Pending</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">CC-102</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">Essay</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">2025-01-01</td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    <input type="file" className="mb-2 text-black" />
-                    <button
-                      onClick={() => handleSubmit("CC-102", "Essay")}
-                      className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600"
-                    >
-                      Submit
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-300 px-4 py-2 text-black">Completed</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">CC-103</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">Quiz</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">2025-01-05</td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    <input type="file" className="mb-2 text-black" />
-                    <button
-                      onClick={() => handleSubmit("CC-103", "Quiz")}
-                      className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600"
-                    >
-                      Submit
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-300 px-4 py-2 text-black">Pending</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">CC-104</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">Project</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">2025-01-10</td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    <input type="file" className="mb-2 text-black" />
-                    <button
-                      onClick={() => handleSubmit("CC-104", "Project")}
-                      className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600"
-                    >
-                      Submit
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-300 px-4 py-2 text-black">Pending</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">CC-105</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">Assignment</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">2025-01-15</td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    <input type="file" className="mb-2 text-black" />
-                    <button
-                      onClick={() => handleSubmit("CC-105", "Assignment")}
-                      className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600"
-                    >
-                      Submit
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-300 px-4 py-2 text-black">Completed</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">CC-106</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">Presentation</td>
-                  <td className="border border-gray-300 px-4 py-2 text-black">2025-01-20</td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    <input type="file" className="mb-2 text-black" />
-                    <button
-                      onClick={() => handleSubmit("CC-106", "Presentation")}
-                      className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600"
-                    >
-                      Submit
-                    </button>
-                  </td>
-                </tr>
+                {sortedTasks.length === 0 ? (
+                  <tr>
+                    <td colSpan={6} className="text-gray-500 py-4">No tasks yet.</td>
+                  </tr>
+                ) : (
+                  sortedTasks.map((t, idx) => (
+                    <tr key={idx}>
+                      <td className="border border-gray-300 px-4 py-2 text-black">{t.status}</td>
+                      <td className="border border-gray-300 px-4 py-2 text-black">{t.subject}</td>
+                      <td className="border border-gray-300 px-4 py-2 text-black">{t.task}</td>
+                      <td className="border border-gray-300 px-4 py-2 text-black">{t.dueDate}</td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <input type="file" className="mb-2 text-black" />
+                        <button
+                          onClick={() => handleSubmit(t.subject, t.task)}
+                          className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600"
+                        >
+                          Submit
+                        </button>
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        <button
+                          className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                          onClick={() => handleRemoveTask(tasks.indexOf(t))}
+                        >
+                          Remove
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
+            {/* Modal for adding a new task */}
+            {showModal && (
+              <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
+                <div className="bg-white p-6 rounded-lg shadow-lg w-80">
+                  <h2 className="text-xl font-bold mb-4">Add New Task</h2>
+                  <div className="mb-2">
+                    <label className="block text-black mb-1">Subject Name</label>
+                    <input
+                      type="text"
+                      className="w-full border px-2 py-1 rounded text-black"
+                      value={newTask.subject}
+                      onChange={(e) => setNewTask({ ...newTask, subject: e.target.value })}
+                    />
+                  </div>
+                  <div className="mb-2">
+                    <label className="block text-black mb-1">Task Type</label>
+                    <input
+                      type="text"
+                      className="w-full border px-2 py-1 rounded text-black"
+                      value={newTask.task}
+                      onChange={(e) => setNewTask({ ...newTask, task: e.target.value })}
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-black mb-1">Due Date</label>
+                    <input
+                      type="date"
+                      className="w-full border px-2 py-1 rounded text-black"
+                      value={newTask.dueDate}
+                      onChange={(e) => setNewTask({ ...newTask, dueDate: e.target.value })}
+                    />
+                  </div>
+                  <div className="flex justify-end gap-2">
+                    <button
+                      className="bg-gray-400 text-white px-3 py-1 rounded hover:bg-gray-500"
+                      onClick={() => setShowModal(false)}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
+                      onClick={handleAddTask}
+                      disabled={!newTask.subject || !newTask.task || !newTask.dueDate}
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </section>
         </div>
       </main>
