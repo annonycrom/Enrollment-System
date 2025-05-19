@@ -16,7 +16,7 @@ export default function Dashboard() {
   const handleSignOut = () => {
     console.log("Signing out...");
     setShowMenu(false);
-    router.push("/"); 
+    router.push("/");  
   };
 
   const courses = [

@@ -218,7 +218,7 @@ export default function Dashboard() {
                                                     onChange={(e) => handleFileChange(index, e)}
                                                     className="mb-2 block"
                                                 />
-                                                <button
+                                                <button 
                                                     onClick={() => handleSubmit(index)}
                                                     className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
                                                 >

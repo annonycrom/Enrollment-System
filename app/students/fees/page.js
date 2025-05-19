@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="flex min-h-screen bg-white">
       {/* Left Sidebar Container */}
-      <div className="flex flex-col w-80">
+      <div className="flex flex-col w-80"> 
         {/* Blue Sidebar (top) */}  
         <div className="flex flex-col items-center bg-blue-600 p-5 shadow-md">
           <Image
