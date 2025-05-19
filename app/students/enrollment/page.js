@@ -171,14 +171,14 @@ export default function Dashboard() {
               <p className="font-bold mb-1">Upcoming Deadlines:</p>
               {selectedCourse.deadlines.map((d, i) => (
                 <p key={i}>{d}</p>
-              ))}
+              ))} 
               <div className="mt-4 flex gap-2">
                 <button
                   onClick={handleDropCourse} 
                   className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600"
                 >
                   Drop Course
-                </button>
+                </button> 
                 <button
                   onClick={handleClose}
                   className="bg-gray-500 text-white px-4 py-1 rounded hover:bg-gray-600"

@@ -222,8 +222,8 @@ export default function Dashboard() {
                                                     onClick={() => handleSubmit(index)}
                                                     className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
                                                 >
-                                                    Submit
-                                                </button> 
+                                                    Submit 
+                                                </button>  
                                             </td>
                                         </tr>
                                     ))}

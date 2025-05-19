@@ -145,10 +145,10 @@ const Announcements = () => {
                       Sign Out
                     </button>
                   </li>
-                </ul> 
+                </ul>  
               </div>
             )}
-          </div>
+          </div> 
         </header>
 
         <section className="w-full max-w-3xl mx-auto my-6 p-5 bg-white border border-gray-300 rounded-md shadow-sm">

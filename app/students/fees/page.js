@@ -24,13 +24,13 @@ function App() {
     <div className="flex min-h-screen bg-white">
       {/* Left Sidebar Container */}
       <div className="flex flex-col w-80">
-        {/* Blue Sidebar (top) */} 
+        {/* Blue Sidebar (top) */}  
         <div className="flex flex-col items-center bg-blue-600 p-5 shadow-md">
           <Image
             src="/sample.jpg"
             alt="Logo"
             width={100}
-            height={200}
+            height={200} 
             className="rounded-full w-50 h-50 object-cover mb-4"
           />
           <h5 className="text-xl font-bold text-black mt-2 m-0">Jhon Doe</h5>
