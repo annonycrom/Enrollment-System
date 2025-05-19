@@ -154,6 +154,7 @@ export default function Dashboard() {
                                         </a>
                                     </li>
                                     <li>
+                                        
                                         <a
                                             href="/faculty/settings"
                                             className="block px-4 py-2 text-black hover:bg-gray-100 cursor-pointer"

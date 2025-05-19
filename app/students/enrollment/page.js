@@ -15,6 +15,7 @@ export default function Dashboard() {
     router.push("/");
   };
 
+  
   const courses = [
     {
       id: "CC104",

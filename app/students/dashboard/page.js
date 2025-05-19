@@ -8,11 +8,7 @@ export default function Dashboard() {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState("");
-<<<<<<< HEAD
-  const [modalText, setModalText] = useState(""); 
-=======
   const [modalText, setModalText] = useState("");
->>>>>>> 69669e4454d81fca5ffc36c343b6246793588288
   const [editingId, setEditingId] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
   const [confirmAction, setConfirmAction] = useState(null);
@@ -20,29 +16,17 @@ export default function Dashboard() {
   const handleSignOut = () => {
     console.log("Signing out...");
     setShowMenu(false);
-<<<<<<< HEAD
-    router.push("/");  
-=======
     router.push("/");
->>>>>>> 69669e4454d81fca5ffc36c343b6246793588288
   };
 
   const courses = [
     { code: "CC-104", deadlines: 1 },
-<<<<<<< HEAD
-    { code: "CC-103" }, 
-    { code: "GE-09" },
-    { code: "GE-12" },
-    { code: "IT-102", deadlines: 1 },
-    { code: "GE-07", deadlines: 1 }, 
-=======
     { code: "CC-103" },
     { code: "GE-09" },
     { code: "GE-12" },
     { code: "IT-102", deadlines: 1 },
-    { code: "GE-07", deadlines: 1 },
->>>>>>> 69669e4454d81fca5ffc36c343b6246793588288
-  ];
+    { code: "GE-07", deadlines: 1 }, 
+  ]; 
 
   const progressData = [
     { code: "CC-104", project: "71%" },
@@ -125,13 +109,9 @@ export default function Dashboard() {
         )}
       </div>
         </div>
-      )} 
+      )}
       <div className="flex flex-row items-start relative">
-
       <div className="flex flex-col items-center bg-blue-600 p-5 shadow-md w-80 h-70">
-
-        <div className="flex flex-col items-center bg-blue-600 p-5 shadow-md w-80 h-70">
-
           <Image
             src="/sample.jpg"
             alt="Logo"
