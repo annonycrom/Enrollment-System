@@ -145,7 +145,7 @@ const Announcements = () => {
                       Sign Out
                     </button>
                   </li>
-                </ul>
+                </ul> 
               </div>
             )}
           </div>
@@ -157,7 +157,7 @@ const Announcements = () => {
             {announcementsData.map((item, index) => (
               <AnnouncementItem
                 key={index}
-                icon={item.icon}
+                icon={item.icon}  
                 title={item.title}
                 description={item.description}
                 date={item.date}
