@@ -9,13 +9,14 @@ export default function Dashboard() {
   const [showMenu, setShowMenu] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState(null);
 
+  
   const handleSignOut = () => {
     console.log("Signing out...");
     setShowMenu(false);
     router.push("/");
   };
 
-  
+
   const courses = [
     {
       id: "CC104",
