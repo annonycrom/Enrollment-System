@@ -1,8 +1,0 @@
-{
-  "/_not-found/page": "app/_not-found/page.js",
-  "/faculty/dashboard/page": "app/faculty/dashboard/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js",
-  "/students/dashboard/page": "app/students/dashboard/page.js",
-  "/students/enrollment/page": "app/students/enrollment/page.js"
-}
